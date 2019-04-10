@@ -67,4 +67,20 @@ instanceof
 // x CAN be used here
 ```
 
+### Promise, then and pipe
+Replace callback stack. We can use
+```javascript
+// resolve and error are callback function
+var promise = new Promise(reslove, error)
 
+promise.then(resolve, error)
+```
+
+As for pipe, we can use it like
+```javascript
+createReadStream('/path/to/a/big/file').pipe(createWriteStream('/path/to/the/dest'))
+```
+It gives us :
+1. A stable, fixed length, continuous input stream
+2. We can write it to destination file
+3. Balance the reading and writing speed
